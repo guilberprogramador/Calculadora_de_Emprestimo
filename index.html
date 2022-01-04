@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA DE EMPRESTIMOS </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <table>
+        <tr><th>ENTER LOAN DATA:</th>
+            <td></td>
+            <th>LOAN BALANCE, CUMULATIVE EQUITY, AND INTEREST PAYMENTS</th></tr>
+        <tr><td>AMOUNT OF THE LOAN ($): </td>
+            <td><input id="amount" onchange="calculate();"></td>
+            <td rowspan="8">
+                <canvas id="graph" width="400" height="250"></canvas></td></tr>
+        <tr><td>ANNUAL INTEREST (%):</td>
+            <td><input id="apr" onchange="calculate();"></td></tr>
+        <tr><td>REPAYMENT PERIOD (YEARS):</td>
+            <td><input id="years" onchange="calculate();"></td>
+        <tr><td>ZIPCODE (TO FIND LENDERS):</td>
+            <td><input id="zipcode" onchange="calculate();"></td>
+        <tr><th>APPROXIMATE PAYMENTS:</th>
+        <td><button onclick="calculate();">CALCULATE</button></td></tr>
+        <tr><td>MONTHLY PAYMENT:</td>
+            <td>$<span class="output" id="payment"></span></td></tr>
+        <tr><td>TOTAL PAYMENT:</td>
+            <td>$<span class="output" id="total"></span></td></tr>
+        <tr><td>TOTAL INTEREST</td>
+            <td>$<span class="output" id="totalinterest"></span></td></tr>
+        <tr><th>SPONSORS:</th><td colspan="2">
+            APPLY FOR YOUR LOAN WITH ONE OF THESE FINE LENDERS:
+            <div id="lenders"></div></td></tr>
+        </tr>
+        </tr>
+    </table>
+
+
+<script src="script.js"></script>
+</body>
+</html>
